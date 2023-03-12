@@ -77,8 +77,8 @@ local function setup(configs)
 
       Conceal = { fg = colors.comment, },
       CursorColumn = { bg = colors.black, },
-      CursorLine = { bg = colors.selection, },
-      ColorColumn = { bg = colors.selection, },
+      CursorLine = { bg = colors.bglight, },
+      ColorColumn = { bg = colors.bgdark, },
 
       StatusLine = { fg = colors.white, bg = colors.black, },
       StatusLineNC = { fg = colors.comment, },
@@ -86,17 +86,17 @@ local function setup(configs)
       StatusLineTermNC = { fg = colors.comment, },
 
       Directory = { fg = colors.cyan, },
-      DiffAdd = { fg = colors.bg, bg = colors.green, },
+      DiffAdd = { fg = colors.green, },
       DiffChange = { fg = colors.orange, },
       DiffDelete = { fg = colors.red, },
       DiffText = { fg = colors.comment, },
 
       ErrorMsg = { fg = colors.bright_red, },
-      VertSplit = { fg = colors.black, },
+      VertSplit = { fg = colors.comment, bg = colors.bgdark, },
       Folded = { fg = colors.comment, },
       FoldColumn = {},
-      Search = { fg = colors.black, bg = colors.orange, },
-      IncSearch = { fg = colors.orange, bg = colors.comment, },
+      Search = { fg = colors.black, bg = colors.yellow, },
+      IncSearch = { fg = colors.yellow, bg = colors.comment, },
       LineNr = { fg = colors.comment, },
       MatchParen = { fg = colors.fg, underline = true, },
       NonText = { fg = colors.nontext, },
@@ -106,7 +106,7 @@ local function setup(configs)
       PmenuThumb = { bg = colors.selection, },
 
       Question = { fg = colors.purple, },
-      QuickFixLine = { fg = colors.black, bg = colors.yellow, },
+      QuickFixLine = { fg = colors.green, },
       SpecialKey = { fg = colors.nontext, },
 
       SpellBad = { fg = colors.bright_red, underline = true, },
@@ -129,7 +129,7 @@ local function setup(configs)
       ['@error'] = { fg = colors.bright_red, },
       ['@punctuation.delimiter'] = { fg = colors.fg, },
       ['@punctuation.bracket'] = { fg = colors.fg, },
-      ['@punctuation.special'] = { fg = colors.cyan, },
+      ['@punctuation.special'] = { fg = colors.fg, },
 
       ['@constant'] = { fg = colors.purple, },
       ['@constant.builtin'] = { fg = colors.purple, },
@@ -153,8 +153,8 @@ local function setup(configs)
       ['@parameter'] = { fg = colors.orange, },
       ['@parameter.reference'] = { fg = colors.orange, },
       ['@method'] = { fg = colors.green, },
-      ['@field'] = { fg = colors.orange, },
-      ['@property'] = { fg = colors.purple, },
+      ['@field'] = { fg = colors.bright_green, },
+      ['@property'] = { fg = colors.fg, },
       ['@constructor'] = { fg = colors.cyan, },
 
       ['@conditional'] = { fg = colors.pink, },
@@ -179,7 +179,7 @@ local function setup(configs)
       ['@text.strong'] = { fg = colors.orange, bold = true, }, -- bold
       ['@text.emphasis'] = { fg = colors.yellow, italic = true, }, -- italic
       ['@text.underline'] = { fg = colors.orange, },
-      ['@text.title'] = { fg = colors.pink, bold = true, }, -- title
+      ['@text.title'] = { fg = colors.pink, }, -- title
       ['@text.literal'] = { fg = colors.yellow, }, -- inline code
       ['@text.uri'] = { fg = colors.yellow, italic = true, }, -- urls
       ['@text.reference'] = { fg = colors.orange, bold = true, },
@@ -201,36 +201,37 @@ local function setup(configs)
       ['@decorator'] = { fg = colors.cyan },
 
       -- HTML
-      htmlArg = { fg = colors.green, },
-      htmlBold = { fg = colors.yellow, bold = true, },
-      htmlEndTag = { fg = colors.cyan, },
-      htmlH1 = { fg = colors.pink, },
-      htmlH2 = { fg = colors.pink, },
-      htmlH3 = { fg = colors.pink, },
-      htmlH4 = { fg = colors.pink, },
-      htmlH5 = { fg = colors.pink, },
-      htmlH6 = { fg = colors.pink, },
-      htmlItalic = { fg = colors.purple, italic = true, },
-      htmlLink = { fg = colors.purple, underline = true, },
+      htmlArg = { fg = colors.yellow, },
+      htmlBold = { fg = colors.orange, bold = true, },
+      htmlEndTag = { fg = colors.white, },
+      htmlH1 = { fg = colors.purple, bold = true, },
+      htmlH2 = { fg = colors.purple, bold = true, },
+      htmlH3 = { fg = colors.purple, bold = true, },
+      htmlH4 = { fg = colors.purple, bold = true, },
+      htmlH5 = { fg = colors.purple, bold = true, },
+      htmlH6 = { fg = colors.purple, bold = true, },
+      htmlItalic = { fg = colors.yellow, italic = true, },
+      htmlLink = { fg = colors.cyan, underline = true, },
       htmlSpecialChar = { fg = colors.yellow, },
       htmlSpecialTagName = { fg = colors.cyan, },
-      htmlTag = { fg = colors.cyan, },
-      htmlTagN = { fg = colors.cyan, },
+      htmlTag = { fg = colors.pink, },
+      htmlTagN = { fg = colors.pink, },
       htmlTagName = { fg = colors.cyan, },
       htmlTitle = { fg = colors.white, },
 
       -- Markdown
+      markdownAutomaticLink = { fg = colors.cyan, },
       markdownBlockquote = { fg = colors.yellow, italic = true, },
       markdownBold = { fg = colors.orange, bold = true, },
       markdownCode = { fg = colors.green, },
       markdownCodeBlock = { fg = colors.orange, },
       markdownCodeDelimiter = { fg = colors.red, },
-      markdownH1 = { fg = colors.pink, bold = true, },
-      markdownH2 = { fg = colors.pink, bold = true, },
-      markdownH3 = { fg = colors.pink, bold = true, },
-      markdownH4 = { fg = colors.pink, bold = true, },
-      markdownH5 = { fg = colors.pink, bold = true, },
-      markdownH6 = { fg = colors.pink, bold = true, },
+      markdownH1 = { fg = colors.purple, bold = true, },
+      markdownH2 = { fg = colors.purple, bold = true, },
+      markdownH3 = { fg = colors.purple, bold = true, },
+      markdownH4 = { fg = colors.purple, bold = true, },
+      markdownH5 = { fg = colors.purple, bold = true, },
+      markdownH6 = { fg = colors.purple, bold = true, },
       markdownHeadingDelimiter = { fg = colors.red, },
       markdownHeadingRule = { fg = colors.comment, },
       markdownId = { fg = colors.purple, },
@@ -240,7 +241,7 @@ local function setup(configs)
       markdownLinkDelimiter = { fg = colors.purple, },
       markdownLinkText = { fg = colors.pink, },
       markdownListMarker = { fg = colors.cyan, },
-      markdownOrderedListMarker = { fg = colors.red, },
+      markdownOrderedListMarker = { fg = colors.cyan, },
       markdownRule = { fg = colors.comment, },
 
       --  Diff
